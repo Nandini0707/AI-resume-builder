@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poly:ital@0;1&display=swap');
+@import "tailwindcss";
+
+*{
+   font-family: "Outfit", sans-serif;
+}
+@layer base{
+   button{
+      @apply cursor-pointer;
+   }
+   input:not([type="checkbox"]){
+      @apply outline-none focus:ring border border-gray-300  focus:ring-blue-500 focus:border-blue-500 rounded-lg;
+      textarea{
+         @apply outline-none focus:ring border border-gray-300  focus:ring-blue-500 focus:border-blue-500 rounded-lg;
+      }
+   }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  * {
+    overflow: visible !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .resume-print {
+    position: static !important;
+    width: 210mm;
+    min-height: 297mm;
+  }
+}
+@page {
+  size: A4;
+  margin: 10mm;
+}
